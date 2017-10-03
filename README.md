@@ -18,6 +18,12 @@ Have ruby 2.2.2+ installed (for Rails 5).
 rails test
 ```
 
+For a unique test run:
+
+```
+rails test test/models/company_test.rb 
+```
+
 Tests contain only unit tests as I am using the gem administrate where everything is already handled on the frontend part.
 
 ## Deployment
