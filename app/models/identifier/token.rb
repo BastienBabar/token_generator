@@ -3,9 +3,9 @@ module Identifier
     # *ar_model* must be an activerecord model with a string *attribute* we want to tokenize
     #
     # ==== Options
-    # * <tt>:separator</tt> - String separator between blocks in token
-    # * <tt>:block_size</tt> - Size of each block
-    # * <tt>:number_of_blocks</tt> - Number of blocks
+    # * :separator - String separator between blocks in token
+    # * :block_size - Size of each block
+    # * :number_of_blocks - Number of blocks
     def initialize(ar_model, attribute, options = {})
       @ar_model = ar_model
       @attribute = attribute
@@ -15,10 +15,9 @@ module Identifier
     end
 
     def generate
-      token = generate_token(@number_of_blocks, @separator, @block_size)
-      while @ar_model.find_by(@attribute.to_sym => token).present? do
+      begin
         token = generate_token(@number_of_blocks, @separator, @block_size)
-      end
+      end while @ar_model.find_by(@attribute.to_sym => token).present?
       token
     end
 
