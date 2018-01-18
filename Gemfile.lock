@@ -1,3 +1,8 @@
+PATH
+  remote: ../token
+  specs:
+    token (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -261,6 +266,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
+  token!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
